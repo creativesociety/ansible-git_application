@@ -26,7 +26,7 @@
   when: git_application_pull_from_git == True and known_hosts_file.stat.exists == false
 
 - name: clone repo to application directory
-  git: dest={{ git_application_deploy_to }} repo={{ git_application_repo }} version=master
+  git: dest={{ git_application_deploy_to }} repo={{ git_application_repo }} version={{ git_application_version }}
   when: git_application_pull_from_git == True
 
 - name: make application directory be owned by application user
